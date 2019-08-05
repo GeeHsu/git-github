@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Git & Github 指令</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrap">
+        <div class="note">
+            <h1>Git 環境安裝</h1>
+            <p>
+                <a href="https://git-scm.com/" target="_blank">download</a>
+            </p>
+            <h1>Windows - 命令提示字元</h1>
+            <h2>使用工具 Git Bash</h2>
+            <ul>
+                <li>移動路徑:cd 路徑</li>
+                <li>回上一層:cd ..</li>
+                <li>展開列表:ls</li>
+                <li>開新資料夾:mkdir 資料夾名稱</li>
+                <li>開新檔案:touch 檔案名稱</li>
+            </ul>
+            <h1>Git前言提要</h1>
+            <img src="img/git.png" width="600" height="400" alt="git教學圖">
+            <h1>Git & Github 指令</h1>
+            <table>
+                <h2>基礎設定</h2>
+                <tr>
+                    <td>查詢版本</td>
+                    <td>git version</td>
+                </tr>
+                <tr>
+                    <td>查詢設定列表</td>
+                    <td>git config --list</td>
+                </tr>
+                <tr>
+                    <td>輸入姓名</td>
+                    <td>git config --global user.name "你的姓名"</td>
+                </tr>
+                <tr>
+                    <td>輸入email</td>
+                    <td>git config --global user.email "你的email"</td>
+                </tr>
+                <tr>
+                    <td>編輯</td>
+                    <td>git config --global --edit</td>
+                </tr>
+                <tr>
+                    <td>輸入</td>
+                    <td>wq存檔離開</td>
+                </tr>
+            </table>
+            <table>
+                <h2>新增本地 / 遠端數據庫</h2>
+                <tr>
+                    <td>在本地資料夾新增數據庫</td>
+                    <td>git init</td>
+                </tr>
+                <tr>
+                    <td>複製遠端數據庫</td>
+                    <td>git clone 遠端數據庫網址</td>
+                </tr>
+            </table>
+            <table>
+                <h2>增加 / 刪除檔案</h2>
+                <tr>
+                    <td>增加檔案進入索引</td>
+                    <td>git add 檔案名稱</td>
+                </tr>
+                <tr>
+                    <td>增加全部檔案進入索引</td>
+                    <td>git add .</td>
+                </tr>
+                <tr>
+                    <td>查詢狀態</td>
+                    <td>git status</td>
+                </tr>
+                <tr>
+                    <td>顯示歷史紀錄</td>
+                    <td>git log</td>
+                </tr>
+                <tr>
+                    <td>將索引提交到數據庫</td>
+                    <td>git commit -m '更新訊息'</td>
+                </tr>
+            </table>
+            <table>
+                <h2>還原指令</h2>
+                <tr>
+                    <td>還原工作目錄與索引，會跟最後一次 commit 保持一樣</td>
+                    <td>git reset --hard</td>
+                </tr>
+                <tr>
+                    <td>全部檔案取消索引</td>
+                    <td>git reset HEAD</td>
+                </tr>
+                <tr>
+                    <td>單一檔案取消索引</td>
+                    <td>git reset HEAD 檔案名稱</td>
+                </tr>
+                <tr>
+                    <td>恢復單一檔案到最金 commit 狀態</td>
+                    <td>git checkout 檔案名稱</td>
+                </tr>
+                <tr>
+                    <td>刪除最近一次 commit</td>
+                    <td>git reset --hard HEAD^</td>
+                </tr>
+                <tr>
+                    <td>上面語法如果刪除錯了可以再用此語法還原</td>
+                    <td>git reset --hard ORIG_HEAD</td>
+                </tr>
+                <tr>
+                    <td>刪除最近一次 commit，但保留異動內容</td>
+                    <td>git reset --soft HEAD^</td>
+                </tr>
+                <tr>
+                    <td>commit 後發現有幾個檔案忘了加入進去，想要補內容進去時</td>
+                    <td>git commit --amend</td>
+                </tr>
+            </table>
+            <table>
+                <h2>分支</h2>
+                <tr>
+                    <td>顯示所有本地分支</td>
+                    <td>git branch</td>
+                </tr>
+                <tr>
+                    <td>新增分支</td>
+                    <td>git branch 分支名稱</td>
+                </tr>
+                <tr>
+                    <td>切換分支</td>
+                    <td>git checkout 分支名稱</td>
+                </tr>
+                <tr>
+                    <td>合併指定分支到目前的分支</td>
+                    <td>git merge 分支名稱</td>
+                </tr>
+                <tr>
+                    <td>刪除分支</td>
+                    <td>git branch -d 分支名稱</td>
+                </tr>
+            </table>
+            <table>
+                <h2>遠端數據庫操作</h2>
+                <tr>
+                    <td>複製遠端數據庫</td>
+                    <td>git clone 遠端數據庫網址</td>
+                </tr>
+                <tr>
+                    <td>查詢遠端數據庫</td>
+                    <td>git remote</td>
+                </tr>
+                <tr>
+                    <td>將本地分支推送到遠端分支</td>
+                    <td>git push 遠端數據庫名稱 遠端分支名稱</td>
+                </tr>
+                <tr>
+                    <td>將遠端分支拉下來與本地分支進行合併</td>
+                    <td>git pull</td>
+                </tr>
+            </table>
+            <table>
+                <h2>標籤</h2>
+                <tr>
+                    <td>查詢標籤</td>
+                    <td>git tag</td>
+                </tr>
+                <tr>
+                    <td>查詢詳細標籤</td>
+                    <td>git tag -n</td>
+                </tr>
+                <tr>
+                    <td>刪除標籤</td>
+                    <td>git tag -d 標籤名稱</td>
+                </tr>
+                <tr>
+                    <td>新增輕量標籤</td>
+                    <td>git tag 標籤名稱</td>
+                </tr>
+                <tr>
+                    <td>新增標示標籤</td>
+                    <td>git tag -am "備註內容" 標籤名稱</td>
+                </tr>
+            </table>
+            <table>
+                <h2>暫存</h2>
+                <tr>
+                    <td>暫時儲存當前目錄</td>
+                    <td>git stash</td>
+                </tr>
+                <tr>
+                    <td>瀏覽 stash 列表</td>
+                    <td>git stash list</td>
+                </tr>
+                <tr>
+                    <td>還原暫存</td>
+                    <td>git stash pop</td>
+                </tr>
+                <tr>
+                    <td>清除最近暫存</td>
+                    <td>git stash drop</td>
+                </tr>
+                <tr>
+                    <td>清除全部暫存</td>
+                    <td>git stash clear</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
